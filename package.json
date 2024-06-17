@@ -7,7 +7,8 @@
   "scripts": {
     "build:prepare": "pnpm run -C ./packages/utils build",
     "build:vue": "pnpm build:prepare && pnpm run -C ./packages/vue build",
-    "test:utils": "pnpm run -C ./packages/utils test"
+    "test:utils": "pnpm run -C ./packages/utils test",
+    "play:vue": "pnpm run -C ./play dev"
   },
   "keywords": [],
   "author": "Ranaran",

@@ -4,7 +4,7 @@ import chalk from 'chalk'
 import { readFile, writeFile } from 'node:fs/promises'
 import { emptyDir, ensureDir } from 'fs-extra'
 import { resolve, basename } from 'node:path'
-import { vueComponentsPath } from './paths'
+import { vueComponentsPath, vueSrcPath } from './paths'
 import { resourcesPath } from '@capybara-ui/icons-utils'
 import glob from 'fast-glob'
 import { kabeCaseToPascalCase, formatCode } from '@capybara-ui/icons-utils'
@@ -15,8 +15,9 @@ import { kabeCaseToPascalCase, formatCode } from '@capybara-ui/icons-utils'
  * ------------------------------
  */
 consola.info(chalk.blue('preparing to generate vue components...'))
+consola.info(chalk.yellow('getting svg files...'))
 await ensureDir(vueComponentsPath) // 确保目录存在，如果不存在则创建
-await emptyDir(vueComponentsPath) // 清空目录
+await emptyDir(vueComponentsPath) // 清空目录，确保删除的图标也不会留在目录中
 const files = await getSvgFiles()
 
 // 获取 svg 文件
@@ -87,11 +88,11 @@ async function generateEntryFile(filesPath: string[]) {
   const entryContent = filesPath
     .map((filePath) => {
       const { fileName, componentName } = getFileAndComponentName(filePath)
-      return `export { default as ${componentName} } from './${fileName}.vue'`
+      return `export { default as ${componentName} } from './components/${fileName}.vue'`
     })
     .join('\n')
 
-  await writeFile(resolve(vueComponentsPath, 'index.ts'), entryContent, 'utf-8')
+  await writeFile(resolve(vueSrcPath, 'index.ts'), entryContent, 'utf-8')
 }
 
 consola.info(chalk.green('generate icon entry file successfully!'))
