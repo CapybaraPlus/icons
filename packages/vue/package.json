@@ -3,10 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsx ./build/generate.ts"
   },
   "keywords": [],
   "author": "Ranaran",
-  "license": "ISC"
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^3.4.21"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "vue-tsc": "^2.0.6"
+  }
 }

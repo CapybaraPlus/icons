@@ -1,0 +1,14 @@
+{
+  "name": "@capybara-ui/icons-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "pnpm build && tsx format.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
