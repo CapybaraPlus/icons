@@ -8,7 +8,8 @@
     "build:prepare": "pnpm run -C ./packages/utils build",
     "build:vue": "pnpm build:prepare && pnpm run -C ./packages/vue build",
     "test:utils": "pnpm run -C ./packages/utils test",
-    "play:vue": "pnpm run -C ./play dev"
+    "play:vue": "pnpm run -C ./play dev",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "Ranaran",
@@ -25,9 +26,14 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "globals": "^15.2.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
     "tsx": "^4.15.5",
     "typescript": "^5.2.2",
     "typescript-eslint": "^7.8.0"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
   }
 }
