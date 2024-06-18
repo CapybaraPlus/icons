@@ -2,14 +2,30 @@
   "name": "@capybara-ui/icons-vue",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
   "scripts": {
-    "build": "tsx ./build/generate.ts"
+    "build": "pnpm run build:generate && run-p build:build build:types",
+    "build:generate": "tsx ./build/generate.ts",
+    "build:build": "tsx build/build.ts",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly"
   },
   "keywords": [],
   "author": "Ranaran",
-  "license": "ISC",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capybaraui/icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/capybaraui/icons/issues"
+  },
+  "homepage": "https://github.com/capybaraui/icons#readme",
   "peerDependencies": {
     "vue": "^3.4.21"
   },
