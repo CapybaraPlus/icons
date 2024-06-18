@@ -1,5 +1,5 @@
 {
-  "name": "play",
+  "name": "@capybara-plus/play",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@capybara-ui/icons-vue": "workspace:^",
+    "@capybara-plus/icons-vue": "workspace:^",
     "vue": "^3.4.21"
   },
   "devDependencies": {

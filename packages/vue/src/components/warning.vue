@@ -1,0 +1,22 @@
+
+<template>
+
+<svg version="1.1" id="layer_x5F_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+<g>
+	<g>
+		<path style="fill:#F7B500;" d="M512,126L66.3,898l891.5,0L512,126z M479.5,358.8c0-15.4,12.5-27.8,27.9-27.8h13.8
+			c15.4,0,27.8,12.5,27.8,27.8v301.6c0,15.4-12.5,27.8-27.8,27.8h-13.8c-15.4,0-27.9-12.5-27.9-27.8V358.8z M512.2,809
+			c-22.1,0-40-17.9-40-40c0-22.1,17.9-40,40-40c22.1,0,40,17.9,40,40C552.2,791.1,534.3,809,512.2,809z"/>
+	</g>
+</g>
+</svg>
+
+</template>
+
+<script setup lang="ts">
+defineOptions({
+  name: 'Warning',
+})
+</script>
+  

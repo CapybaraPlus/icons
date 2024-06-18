@@ -9,7 +9,8 @@
     "build:vue": "pnpm build:prepare && pnpm run -C ./packages/vue build",
     "test:utils": "pnpm run -C ./packages/utils test",
     "play:vue": "pnpm run -C ./play dev",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release:vue": "pnpm build:vue && cd ./packages/vue && npm publish --access public"
   },
   "keywords": [],
   "author": "Ranaran",

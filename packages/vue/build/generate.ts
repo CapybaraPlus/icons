@@ -5,9 +5,9 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { emptyDir, ensureDir } from 'fs-extra'
 import { resolve, basename } from 'node:path'
 import { vueComponentsPath, vueSrcPath } from './paths'
-import { resourcesPath } from '@capybara-ui/icons-utils'
+import { resourcesPath } from '@capybara-plus/icons-utils'
 import glob from 'fast-glob'
-import { kabeCaseToPascalCase, formatCode } from '@capybara-ui/icons-utils'
+import { kabeCaseToPascalCase, formatCode } from '@capybara-plus/icons-utils'
 
 /**
  * ------------------------------

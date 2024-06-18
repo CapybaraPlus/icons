@@ -1,5 +1,5 @@
 import { BuildOptions, build } from 'esbuild'
-import { vuePath } from '@capybara-ui/icons-utils'
+import { vuePath } from '@capybara-plus/icons-utils'
 import { resolve } from 'path'
 import unpluginVue from 'unplugin-vue/esbuild'
 import consola from 'consola'
