@@ -1,5 +1,5 @@
 {
-  "name": "@capybara-ui/icons",
+  "name": "@capybara-plus/icons",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "author": "Ranaran",
   "license": "MIT",
   "devDependencies": {
-    "@capybara-ui/icons-utils": "workspace:^",
+    "@capybara-plus/icons-utils": "workspace:^",
     "@eslint/js": "^9.5.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.2",
