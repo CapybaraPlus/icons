@@ -38,7 +38,8 @@ await Promise.all(files.map((file) => generateVueComponents(file)))
 // 生成 vue 组件
 // file: svg 文件路径
 async function generateVueComponents(filePath: string) {
-  const svgContent = await readFile(filePath, 'utf-8')
+  let svgContent = await readFile(filePath, 'utf-8')
+  svgContent = svgContent.replace(/<\?xml[^>]*\?>/g, '') // 消除 xml 声明
   const { fileName, componentName } = getFileAndComponentName(filePath)
   const vueContent = `
 <template>
