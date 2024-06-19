@@ -1,6 +1,6 @@
 {
   "name": "@capybara-plus/icons-vue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Icon Vue Component for CapybaraUI",
   "main": "./dist/index.js",
   "type": "module",

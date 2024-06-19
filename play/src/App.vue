@@ -1,12 +1,12 @@
 <template>
   <Forward class="big-icon" :style="{ fill: color }"></Forward>
-  <component
-    v-for="(icon, index) of Icons"
-    :is="icon"
-    :key="index"
-    class="icon"
-  ></component>
-  <button @click="handlClick">点击</button>
+  <button @click="handlClick">测试</button>
+  <div class="container">
+    <div class="icon__wrapper" v-for="(icon, index) of Icons" :key="index">
+      <component :is="icon" class="icon"></component>
+      <span>{{ icon.name }}</span>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -14,6 +14,7 @@ import { Icons } from '@capybara-plus/icons-vue'
 import { Forward } from '@capybara-plus/icons-vue'
 import { ref } from 'vue'
 
+console.log(Icons)
 const color = ref('red')
 const handlClick = () => {
   color.value = 'blue'
@@ -23,6 +24,22 @@ const handlClick = () => {
 <style scoped>
 .big-icon {
   height: 96px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icon__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.icon__wrapper:hover {
+  background-color: #ccc;
 }
 .icon {
   height: 48px;
