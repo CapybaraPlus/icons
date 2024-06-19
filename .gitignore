@@ -22,5 +22,4 @@ dist-ssr
 *.sw?
 
 ## vue
-/packages/vue/dist
 /packages/vue/src/components
