@@ -41,6 +41,7 @@ async function generateVueComponents(filePath: string) {
   let svgContent = await readFile(filePath, 'utf-8')
   svgContent = svgContent.replace(/<\?xml[^>]*\?>/g, '') // 消除 xml 声明
   const { fileName, componentName } = getFileAndComponentName(filePath)
+  svgContent = svgContent.replace(/<svg/, `<svg class="ra-icon-${fileName}"`)
   const vueContent = `
 <template>
 ${svgContent}
