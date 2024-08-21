@@ -1,6 +1,6 @@
 {
   "name": "@capybara-plus/icons-vue",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A Icon Vue Component for CapybaraUI",
   "main": "./dist/index.js",
   "type": "module",
@@ -40,10 +40,9 @@
   "peerDependencies": {
     "vue": "^3.4.21"
   },
-  "dependencies": {
-    "vue": "^3.4.21"
-  },
   "devDependencies": {
-    "vue-tsc": "^2.0.6"
+    "vue-tsc": "^2.0.6",
+    "vue": "^3.4.21",
+    "unplugin-vue": "^5.0.5"
   }
 }

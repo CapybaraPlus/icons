@@ -1,6 +1,6 @@
 {
   "name": "@capybara-plus/icons",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -17,6 +17,9 @@
   "license": "MIT",
   "devDependencies": {
     "@capybara-plus/icons-utils": "workspace:^",
+    "@capybara-plus/icons-resources": "workspace:^",
+    "@pnpm/find-workspace-dir": "^7.0.1",
+    "@pnpm/find-workspace-packages": "^6.0.9",
     "@eslint/js": "^9.5.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.2",
@@ -35,8 +38,7 @@
     "prettier": "^3.3.2",
     "tsx": "^4.15.5",
     "typescript": "^5.2.2",
-    "typescript-eslint": "^7.8.0",
-    "unplugin-vue": "^5.0.5"
+    "typescript-eslint": "^7.8.0"
   },
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"

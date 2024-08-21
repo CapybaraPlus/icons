@@ -2,19 +2,19 @@
   <Forward class="big-icon" :style="{ fill: color }"></Forward>
   <button @click="handlClick">测试</button>
   <div class="container">
-    <div class="icon__wrapper" v-for="(icon, index) of Icons" :key="index">
+    <div class="icon__wrapper" v-for="(icon, index) of icons" :key="index">
       <component :is="icon" class="icon"></component>
       <span>{{ icon.name }}</span>
     </div>
   </div>
+  <h1>Hello</h1>
+  <h1>Hello</h1>
 </template>
 
 <script setup lang="ts">
-import { Icons } from '@capybara-plus/icons-vue'
-import { Forward } from '@capybara-plus/icons-vue'
+import { icons } from '@capybara-plus/icons-vue'
 import { ref } from 'vue'
-
-console.log(Icons)
+console.log(icons)
 const color = ref('red')
 const handlClick = () => {
   color.value = 'blue'
@@ -45,7 +45,7 @@ const handlClick = () => {
   height: 48px;
 }
 
-#uuid-f24f98af-7c48-4db0-8414-85f3e6cfbb51 {
+.ra-icon--loading {
   animation: rotate 0.5s linear infinite;
 }
 

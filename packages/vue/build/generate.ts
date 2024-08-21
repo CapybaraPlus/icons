@@ -5,9 +5,10 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { emptyDir, ensureDir } from 'fs-extra'
 import { resolve, basename } from 'node:path'
 import { vueComponentsPath, vueSrcPath } from './paths'
-import { resourcesPath } from '@capybara-plus/icons-utils'
 import glob from 'fast-glob'
 import { kabeCaseToPascalCase, formatCode } from '@capybara-plus/icons-utils'
+import { findWorkspaceDir } from '@pnpm/find-workspace-dir'
+import { findWorkspacePackages } from '@pnpm/find-workspace-packages'
 
 /**
  * ------------------------------
@@ -22,7 +23,12 @@ const files = await getSvgFiles()
 
 // 获取 svg 文件
 async function getSvgFiles() {
-  return glob('*.svg', { cwd: resourcesPath, absolute: true })
+  const workspaceDirs = await findWorkspaceDir(process.cwd())
+  const pkgs = await findWorkspacePackages(workspaceDirs!)
+  const pkg = pkgs.find(
+    (pkg) => pkg.manifest.name === '@capybara-plus/icons-resources',
+  )
+  return glob('*.svg', { cwd: pkg!.dir, absolute: true })
 }
 
 consola.info(chalk.green('get svg files successfully!'))
@@ -40,8 +46,9 @@ await Promise.all(files.map((file) => generateVueComponents(file)))
 async function generateVueComponents(filePath: string) {
   let svgContent = await readFile(filePath, 'utf-8')
   svgContent = svgContent.replace(/<\?xml[^>]*\?>/g, '') // 消除 xml 声明
+  svgContent = svgContent.replace(/id="[^"]*"/, '')
   const { fileName, componentName } = getFileAndComponentName(filePath)
-  svgContent = svgContent.replace(/<svg/, `<svg class="ra-icon-${fileName}"`)
+  svgContent = svgContent.replace(/<svg/, `<svg class="ra-icon--${fileName}"`) // 生成类名
   const vueContent = `
 <template>
 ${svgContent}
