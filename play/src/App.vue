@@ -44,4 +44,17 @@ const handlClick = () => {
 .icon {
   height: 48px;
 }
+
+#uuid-f24f98af-7c48-4db0-8414-85f3e6cfbb51 {
+  animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 </style>
